@@ -4,6 +4,8 @@ build:
   artifacts:
     - image: samirprakash/auth
       context: auth
+    - image: samirprakash/client
+      context: client
 profiles:
   - name: dev
     activation:
@@ -21,4 +23,14 @@ profiles:
               # Sync all the typescript files that are in the src folder
               # with the container src folder
               - src: 'src/**/*.ts'
+                dest: .
+        - image: samirprakash/client
+          context: client
+          docker:
+            dockerfile: Dockerfile
+          sync:
+            manual:
+              # Sync all the typescript files that are in the src folder
+              # with the container src folder
+              - src: '**/*.js'
                 dest: .
