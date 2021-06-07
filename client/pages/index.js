@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import buildClient from '../api/build-client';
 
-export default function Home() {
+const Home = ({ currentUser }) => {
   return (
     <div>
       <Head>
@@ -9,8 +10,20 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div>
-        <h1>Ticketing Landing Page</h1>
+        {currentUser ? (
+          <h1>Ticketing Landing Page</h1>
+        ) : (
+          <h1>You are not signed in.</h1>
+        )}
       </div>
     </div>
   );
-}
+};
+
+Home.getInitialProps = async (context) => {
+  const client = buildClient(context);
+  const { data } = await client.get('/api/users/currentuser');
+  return data;
+};
+
+export default Home;
