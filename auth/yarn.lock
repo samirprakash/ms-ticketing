@@ -2,6 +2,19 @@
 # yarn lockfile v1
 
 
+"@sprockets/common@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.1.tgz#d53bbb0b730ef2c227e22ee305fe019a2b86a270"
+  integrity sha512-oobVkz2C2oRP/DMVwBG76pgsxO8h2FjGlgLCpyi9/0W/SMTzYRd4XetHqEgR4Nx/FFTH40fGmXHN95a4Iz7btw==
+  dependencies:
+    "@types/cookie-session" "^2.0.42"
+    "@types/express" "^4.17.12"
+    "@types/jsonwebtoken" "^8.5.1"
+    cookie-session "^1.4.0"
+    express "^4.17.1"
+    express-validator "^6.11.1"
+    jsonwebtoken "^8.5.1"
+
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
