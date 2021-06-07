@@ -4,10 +4,6 @@ import cookieSession from 'cookie-session';
 import express from 'express';
 import 'express-async-errors';
 import mongoose from 'mongoose';
-import { currentUserRouter } from './routes/current-user';
-import { signinRouter } from './routes/signin';
-import { signoutRouter } from './routes/signout';
-import { signupRouter } from './routes/signup';
 
 const app = express();
 app.set('trust proxy', true);
@@ -19,11 +15,6 @@ app.use(
     secure: true,
   })
 );
-
-app.use(signinRouter);
-app.use(signupRouter);
-app.use(signoutRouter);
-app.use(currentUserRouter);
 
 app.all('*', () => {
   throw new NotFoundError();
@@ -45,7 +36,7 @@ const start = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
-    console.log('connected to mongo database : auth');
+    console.log('connected to mongo database : tickets');
   } catch (err) {
     console.error(err);
   }
