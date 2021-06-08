@@ -1,9 +1,10 @@
-import { errorHandler, NotFoundError } from '@sprockets/common';
+import { currentUser, errorHandler, NotFoundError } from '@sprockets/common';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import express from 'express';
 import 'express-async-errors';
 import mongoose from 'mongoose';
+import { createTicketRouter } from './routes/new';
 
 const app = express();
 app.set('trust proxy', true);
@@ -15,6 +16,9 @@ app.use(
     secure: true,
   })
 );
+app.use(currentUser);
+
+app.use(createTicketRouter);
 
 app.all('*', () => {
   throw new NotFoundError();
