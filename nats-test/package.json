@@ -105,8 +105,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "pub": "ts-node-dev --notify false src/publisher.ts",
-    "sub": "ts-node-dev --notify false src/subscriber.ts"
+    "pub": "ts-node-dev --notify false --rs src/publisher.ts",
+    "sub": "ts-node-dev --notify false --rs src/subscriber.ts"
   },
   "keywords": [],
   "author": "",
