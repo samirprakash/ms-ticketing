@@ -3,9 +3,9 @@
 
 
 "@sprockets/common@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.2.tgz#c493bd1914b936cb03fe4d568e48a6a4fa6f3292"
-  integrity sha512-UQIfNQSiI8P6hEeKDkzrjBC6T4kHaFUwxAhFzYN0dzOksjvPNFHxerE5ElfwJ/ee4QYaKABCEVqSRdUimd8tmw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.3.tgz#dc2f4591f2d3d810f080973661da19a0d9296415"
+  integrity sha512-NSsNzfWgD7h2UeFFFh0WIv87D02VnO/jJr+JKC5veVYAwlbU2wOHpm1yebcgE+X5xjILpbStVkynKrxAP9J93A==
   dependencies:
     "@types/cookie-session" "^2.0.42"
     "@types/express" "^4.17.12"
