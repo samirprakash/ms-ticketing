@@ -1,12 +1,12 @@
 import { Message, Stan } from 'node-nats-streaming';
-import Subjects from './subjects';
+import { Subjects } from './subjects';
 
 interface Event {
   subject: Subjects;
   data: any;
 }
 
-abstract class Subscriber<T extends Event> {
+export abstract class Subscriber<T extends Event> {
   abstract subject: T['subject'];
   abstract queueGroupName: string;
   abstract onMessage(data: T['data'], msg: Message): void;
@@ -52,5 +52,3 @@ abstract class Subscriber<T extends Event> {
       : JSON.parse(data.toString('utf8'));
   }
 }
-
-export default Subscriber;
