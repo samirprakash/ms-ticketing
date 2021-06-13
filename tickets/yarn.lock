@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@sprockets/common@^1.0.1":
+"@sprockets/common@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.4.tgz#5ce35fa4853139e95d505beda9abdeb7e08f35f3"
   integrity sha512-KgPVWp0oi+D0RiELho/+ABUIhDM5qouOOdBBlVU4cDIAqUaZgq1nKKywnZj3YJScKcP34SLZi6HjnxOzgxiSaQ==
