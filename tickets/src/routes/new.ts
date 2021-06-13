@@ -1,7 +1,9 @@
 import { requireAuth, validateRequest } from '@sprockets/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
+import TicketCreatedPublisher from '../events/publishers/ticket-created-publisher';
 import { Ticket } from '../models/ticket';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -18,8 +20,17 @@ router.post(
   async (req: Request, res: Response) => {
     const { title, price } = req.body;
 
+    // save new ticket to mongo
     const ticket = Ticket.build({ title, price, userId: req.currentUser!.id });
     await ticket.save();
+
+    // publish to nats streaming
+    new TicketCreatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      title: ticket.title,
+      price: ticket.price,
+      userId: ticket.userId,
+    });
 
     res.status(201).send(ticket);
   }

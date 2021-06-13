@@ -4,6 +4,7 @@ import cookieSession from 'cookie-session';
 import express from 'express';
 import 'express-async-errors';
 import mongoose from 'mongoose';
+import { natsWrapper } from './nats-wrapper';
 import { indexTicketRouter } from './routes';
 import { createTicketRouter } from './routes/new';
 import { showTicketRouter } from './routes/show';
@@ -41,6 +42,8 @@ const start = async () => {
   }
 
   try {
+    await natsWrapper.connect('ticketing', 'ddadada', 'http://nats-srv:4222');
+
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
