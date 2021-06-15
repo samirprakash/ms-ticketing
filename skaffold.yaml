@@ -34,6 +34,16 @@ profiles:
               # with the container src folder
               - src: 'src/**/*.ts'
                 dest: .
+        - image: samirprakash/orders
+          context: orders
+          docker:
+            dockerfile: Dockerfile
+          sync:
+            manual:
+              # Sync all the typescript files that are in the src folder
+              # with the container src folder
+              - src: 'src/**/*.ts'
+                dest: .
         - image: samirprakash/client
           context: client
           docker:
