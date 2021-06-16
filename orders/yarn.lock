@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@sprockets/common@^1.0.4":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.5.tgz#63b3f2b6633f1c2d45551b944a25cf83302fc7b4"
-  integrity sha512-rI/IfdWrwfQM+F5v6b/0r4jJO14tDTRcaJAgd1PJjQ0X9+IG5qjHJnxf7VWWfTSkJ+vA0tW53BxLfnicxwvg4g==
+"@sprockets/common@^1.0.8":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@sprockets/common/-/common-1.0.9.tgz#dd4a1bee2aaeb22d26c153b6990b8065259f98e2"
+  integrity sha512-skueGp0pLg7m0ft8HTYqnwdkeKk4986j/W+jzC3oIUgqJ1OijNb6xbABPavYSeEasFbBP4Ya4rFCbyEhHU73kw==
   dependencies:
     "@types/cookie-session" "^2.0.42"
     "@types/express" "^4.17.12"
