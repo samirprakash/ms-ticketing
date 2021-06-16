@@ -9,6 +9,7 @@ export * from './events/base-subscriber';
 export * from './events/subjects';
 export * from './events/ticket-created-event';
 export * from './events/ticket-updated-event';
+export * from './events/types/order-status';
 export * from './middlewares//require-auth';
 export * from './middlewares/current-user';
 export * from './middlewares/error-handler';
