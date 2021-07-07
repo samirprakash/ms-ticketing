@@ -16,9 +16,12 @@ spec:
         - name: orders-mongo
           image: mongo
           resources:
-            limits:
+            requests:
               memory: '128Mi'
-              cpu: '500m'
+              cpu: '150m'
+            limits:
+              memory: '1024Mi'
+              cpu: '250m'
 ---
 apiVersion: v1
 kind: Service
