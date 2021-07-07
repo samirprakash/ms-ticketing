@@ -4,6 +4,8 @@ import cookieSession from 'cookie-session';
 import express from 'express';
 import 'express-async-errors';
 import mongoose from 'mongoose';
+import { TicketCreatedSubscriber } from './events/subscribers/ticket-created-subscriber';
+import { TicketUpdatedSubscriber } from './events/subscribers/ticket-updated-subscriber';
 import { natsWrapper } from './nats-wrapper';
 import { indexOrderRouter } from './routes';
 import { deleteOrderRouter } from './routes/delete';
@@ -62,6 +64,9 @@ const start = async () => {
     });
     process.on('SIGINT', () => natsWrapper.client.close());
     process.on('SIGTERM', () => natsWrapper.client.close());
+
+    new TicketCreatedSubscriber(natsWrapper.client).subscribe();
+    new TicketUpdatedSubscriber(natsWrapper.client).subscribe();
 
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
